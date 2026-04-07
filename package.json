@@ -1,0 +1,23 @@
+{
+  "name": "alcovian-chat-ws",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0",
+    "jsonwebtoken": "^9.0.2",
+    "@prisma/client": "^6.3.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "@types/jsonwebtoken": "^9.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.7.3",
+    "prisma": "^6.3.0"
+  }
+}
