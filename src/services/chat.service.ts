@@ -12,7 +12,7 @@ export async function getUserConversations(userId: string): Promise<string[]> {
         where: { userId },
         select: { conversationId: true },
     });
-    return participants.map((p) => p.conversationId);
+    return participants.map((p: any) => p.conversationId);
 }
 
 /**
@@ -90,5 +90,5 @@ export async function getConversationParticipantIds(conversationId: string): Pro
         where: { conversationId },
         select: { userId: true },
     });
-    return participants.map((p) => p.userId);
+    return participants.map((p:any) => p.userId);
 }
