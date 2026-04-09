@@ -27,7 +27,6 @@ model User {
   activeDragonType        String?                    @map("active_dragon_type")
   baseLatitude            Float?                     @map("base_latitude")
   baseLongitude           Float?                     @map("base_longitude")
-  dateOfBirth             DateTime?                  @map("date_of_birth")
   academicYears           AcademicYear[]
   activePowerUsages       ActivePowerUsage[]
   alcoCoinTransactions    AlcoCoinTransaction[]
