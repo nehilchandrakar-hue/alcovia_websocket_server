@@ -10,7 +10,13 @@ export interface TokenPayload {
 
 export function verifyToken(token: string): TokenPayload | null {
     try {
-        return jwt.verify(token, JWT_SECRET) as TokenPayload;
+        const decoded = jwt.verify(token, JWT_SECRET) as jwt.JwtPayload;
+        // JWT stores the user ID in the standard 'sub' claim
+        return {
+            userId: decoded.sub as string,
+            email: decoded.email as string,
+            role: decoded.role as string,
+        };
     } catch {
         return null;
     }
