@@ -92,3 +92,14 @@ export async function getConversationParticipantIds(conversationId: string): Pro
     });
     return participants.map((p:any) => p.userId);
 }
+
+/**
+ * Get a user's Expo push token for sending offline notifications.
+ */
+export async function getUserPushToken(userId: string): Promise<string | null> {
+    const user = await prisma.user.findUnique({
+        where: { id: userId },
+        select: { expoPushToken: true },
+    });
+    return user?.expoPushToken ?? null;
+}
