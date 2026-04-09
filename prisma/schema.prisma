@@ -1376,6 +1376,7 @@ model SessionNote {
   transcriptUrl            String?             @map("transcript_url")
   aiSummaryUrl             String?             @map("ai_summary_url")
   gammaDeckUrl             String?             @map("gamma_deck_url")
+  aiSummary                String?             @map("ai_summary")
   createdAt                DateTime            @default(now()) @map("created_at")
   updatedAt                DateTime            @updatedAt @map("updated_at")
   session                  Session             @relation(fields: [sessionId], references: [id], onDelete: Cascade)
